@@ -1,0 +1,84 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[hmargin={30mm,15mm},vmargin={20mm,20mm},bindingoffset=0mm]{geometry}
+\renewcommand{\contentsname}{Turinys}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, unicode]{hyperref}
+\usepackage{graphicx}
+\begin{document}
+\thispagestyle {empty}
+
+\begin{center}
+
+VILNIAUS UNIVERSITETAS
+
+MATEMATIKOS IR INFORMATIKOS FAKULTETAS
+
+MATEMATINĖS INFORMATIKOS KATEDRA
+
+\vspace{40mm}
+
+\textbf{Aleksandr Kučerov}
+
+Matematinės Informatikos studiju programa
+
+\vspace{30mm}
+
+\textbf{\huge Nesudėtingų Robotų Konstravimas ir Programavimas}
+
+Tiriamojo darbo ataskaita
+
+\vspace{70mm}
+\vfill
+
+Vilnius
+
+2015
+
+\end{center}
+
+\clearpage
+\newpage
+\tableofcontents
+
+\newpage
+\section*{Įvadas}
+\addcontentsline{toc}{section}{Įvadas}
+Robotai visada buvo patikimi pagalbininkai, tačiau ne kiekvienam pasiekiami. Technologijoms tobulėjant, mums jau tampa sunku įsivaizduoti savo gyvenimo be roboto pagalbos. Šie išmanieji įrenginiai pakeitė žmogaus darbą, atlieka užduotis kenksmingoje aplinkoje, sumažina gamybos kaštus. 
+Savo darbe aš aprašysiu savo sukurtą robotą.
+
+\newpage
+\section{Robotas}
+Sukonstruotas seminaro metu robotas apskaičiuoja atstumą nuo roboto iki nutolusio objekto ir jį atvaizduoja dviems būdais:
+\begin{itemize}
+    \item Dešimtainė skaičiavimo sistema, ant roboto paviršiaus yra užrašyti nuo 0 iki 180 skaičiai
+    \item Dvejetainė skaičiavimo sistema, robotas turi 8 diodus kurie atitinkamai reiškia 8 bitukus.
+\end{itemize}
+Roboto sudedamosio dalys:
+
+\begin{center}
+
+\end{center}
+
+\subsection{Arduino Leonardo}
+Mikrokontroleris su 20 skaitmeninių įėjimų/išėjimų, iš kurių 7 gali būti naudojami kaip PWM išėjimai ir 12 analoginių įėjimų. Leonardo plokštė gali būti maitinama per mikro USB jungtį, arba išoriniu maitinimo šaltiniu. Plokštė palaiko įtampą nuo 6 iki 12 V. Taip pat gali dirbti ir su žemesnia įtampa 5 V, tik šiuo atveju darbas gali būti nestabilus, daugiau 12 V nerekomenduojama, nes gali perkaisti įtampos reguliatorius.
+
+\subsection{Ultragarsinis Sensorius HY-SRF05}
+Šis ultragarsinis atstumo sensorius gali išmatuoti atstumą nuo 2cm iki 450 cm, 1 cm tikslumu. Modulis siunčia stačiakampio formos bangas 40 kHz dažniu ir priėmęs bangos aidą apskaičiuoja sugaištą laiką. Žinodami garso greitį (350m/s), roboto programoje, skaičiuojame atsumą iki kliūties. 5V maitinimas.
+
+\subsection{Servo Motor s2309}
+Variklis 180 sukimo kampo. Turi 3 įejimus:
+\begin{enumerate}
+    \item GND - Žemė (ground)
+    \item Signal - Įrašome skaičiu (nuo 0 iki 180), atitinkamai variklis pasisuks šiuo kampu.
+    \item 5V
+\end{enumerate}
+
+\newpage
+\section{Išvados}
+Robotai gali išmatuoti atstumus iki nurodyto taško, jų pagalba mes galime apsisaugoti nuo įsibrovimo, naudojant kaip signalizaciją arba aplinkos stebėjimo įrenginį.
+
+Seminaro metu buvo pagamintas mokomasis robotas, kuris padėtų žmonėms suprasti robotų veikimą bei dvejetainė skaičiavimo sistemą.
+\end{document}
